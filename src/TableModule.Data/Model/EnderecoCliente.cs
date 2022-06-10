@@ -11,5 +11,6 @@ namespace TableModule.Data.Model
         public string Endereco { get; set; }
         public int Numero { get; set; }
         public string Complemento { get; set; }
+        public Guid ClienteId { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace TableModule.Business
 {
     public interface IEnderecoClienteBusiness
     {
-        bool InserirEnderecoCliente(Guid id, string logradouro, string endereco, int numero, string complemento);
+        bool InserirEnderecoCliente(string logradouro, string endereco, int numero, string complemento, Guid clienteId);
 
         List<EnderecoCliente> ObterEnderecoCliente();
 

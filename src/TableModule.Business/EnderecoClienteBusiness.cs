@@ -16,7 +16,7 @@ namespace TableModule.Business
             _context = context;
         }
 
-        public bool InserirEnderecoCliente(Guid id, string logradouro, string endereco, int numero, string complemento)
+        public bool InserirEnderecoCliente(string logradouro, string endereco, int numero, string complemento, Guid clienteId)
         {
             if (string.IsNullOrWhiteSpace(logradouro))
             {
@@ -35,11 +35,12 @@ namespace TableModule.Business
 
             var enderecoCliente = new EnderecoCliente()
             {
-                Id = id,
+                Id = Guid.NewGuid(),
                 Endereco = endereco,
                 Complemento = complemento,
                 Logradouro = logradouro,
-                Numero = numero
+                Numero = numero,
+                ClienteId = clienteId
             };
 
             _context.EnderecoCliente.Add(enderecoCliente);
